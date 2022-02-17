@@ -5,13 +5,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>For Future</title>
     <link rel="stylesheet" href="./stylesheet/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
+    <!-- Header section -->
+    <header>
+        <h1 class="text-center mt-4 fw-bold text-primary">Saving For Future</h1>
+    </header>
+
+    <!-- Main section -->
+    <main>
+        <section>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                        <img class="img-fluid rounded" src="./images/calc-future.jpg" alt="">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
+                        <div class="bg-success p-2 text-dark bg-opacity-10 rounded text-center">
+                            <div>
+                                <h3>Income</h3>
+                                <div class="mt-3">
+                                    <label>Income:</label>
+                                    <input id="income-input" class="form" type="text" placeholder="Monthly Income">
+                                </div>
+
+                                <div class="mt-4">
+                                    <h3>Expenses</h3>
+                                    <div class="mt-3">
+                                        <form>
+                                            <label for="food-cost">Food:</label>
+                                            <input id="food-cost" type="text" placeholder="Food Cost"><br>
+                                            <label class="mt-3" for="rent-cost">Rent:</label>
+                                            <input id="home-cost" type="text" placeholder="Home Rent"><br>
+                                            <label class="mt-3" for="cloth-cost">Clothes:</label>
+                                            <input id="cloth-cost" type="text" placeholder="Clothes Cost">
+                                        </form>
+                                    </div>
+                                </div>
+                                <button id="calc-btn" class="btn btn-primary px-5 mt-3">Calculate</button>
+                            </div>
+                            <div class="mt-4">
+                                <h4>Total Expenses: <span id="total-expenses">000</span></h4>
+                                <h4>Balance: <span id="remaining-balance">000</span></h4>
+                            </div>
+                            <div class="mt-4">
+                                <p>Save: &nbsp; <input id="saving-input" type="text"> &nbsp; % &nbsp; <button
+                                        id="saving-btn" class="btn btn-primary px-3">Save</button></p>
+                            </div>
+                            <div>
+                                <h4>Saving Amount: <span id="saving-amount">000</span></h4>
+                                <h4>Remaining Balance: <span id="final-amount">000</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 
     <script src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
