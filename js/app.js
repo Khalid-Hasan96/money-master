@@ -1,9 +1,13 @@
 //monthly income input field
 function totalIncome() {
+
     let incomeInput = document.getElementById('income-input');
     let incomeInputText = incomeInput.value;
     let totalIncomeInput = parseFloat(incomeInputText);
-
+    if (isNaN(totalIncomeInput) || totalIncomeInput < 0) {
+        incomeInput.value = '';
+        return alert('Input valid number on Monthly Income');
+    }
     return totalIncomeInput;
 }
 //calculate total expenses
@@ -11,19 +15,34 @@ function totalExpenses() {
     let foodCost = document.getElementById('food-cost');
     let totalFoodCostText = foodCost.value;
     let totalFoodCost = parseFloat(totalFoodCostText);
+    if (isNaN(totalFoodCost) || totalFoodCost < 0) {
+        foodCost.value = '';
+        return alert('Input valid number on Food Cost');
+    }
 
     let homeCost = document.getElementById('home-cost');
     let totalHomeCostText = homeCost.value;
     let totalHomeCost = parseFloat(totalHomeCostText);
+    if (isNaN(totalHomeCost) || totalHomeCost < 0) {
+        homeCost.value = '';
+        return alert('Input valid number on Home Rent');
+    }
 
     let clothCost = document.getElementById('cloth-cost');
     let totalClothCosttext = clothCost.value;
     let totalClothCost = parseFloat(totalClothCosttext);
+    if (isNaN(totalClothCost) || totalClothCost < 0) {
+        clothCost.value = '';
+        return alert('Input valid number on Clothes Cost');
+    }
 
     let totalExpenses = document.getElementById('total-expenses');
     let totalExpensesText = totalExpenses.innerText;
     let calcTotalExpenses = parseFloat(totalExpensesText);
     calcTotalExpenses = totalFoodCost + totalHomeCost + totalClothCost;
+    if (calcTotalExpenses > totalIncome()) {
+        return alert("You can't spend more than your income. Be careful next time.")
+    }
     totalExpenses.innerText = calcTotalExpenses;
 
     return calcTotalExpenses;
@@ -47,6 +66,10 @@ function savingAmount() {
     let savingAmountText = savingAmount.innerText;
     let newSavingAmount = parseFloat(savingAmountText);
     newSavingAmount = (totalIncome() * savingField) / 100;
+    if (newSavingAmount > remainingBalance()) {
+        savingAmount.innerText = '';
+        return alert("Sorry! You can't save money this month")
+    }
     savingAmount.innerText = newSavingAmount;
 
     let finalAmount = document.getElementById('final-amount');
