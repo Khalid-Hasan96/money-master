@@ -45,7 +45,7 @@ function totalExpenses() {
     }
     totalExpenses.innerText = calcTotalExpenses;
 
-    return calcTotalExpenses;
+
 }
 //calculate remaining balance
 function remainingBalance() {
